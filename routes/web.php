@@ -41,6 +41,12 @@ Route::put('/warehouses/update/{id}', [WarehouseController::class, 'update'])->n
 Route::delete('/warehouses/destroy/{id}', [WarehouseController::class, 'destroy'])->name('warehouses.destroy');
 
 Route::get('/inventories', [InventoriesController::class, 'index'])->name('inventories');
+Route::post('/inventories/store', [InventoriesController::class, 'store'])->name('inventories.store');
+Route::get('/inventories/edit/{id}', [InventoriesController::class, 'edit'])->name('inventories.edit');
+Route::put('/inventories/update/{id}', [InventoriesController::class, 'update'])->name('inventories.update');
+Route::delete('/inventories/delete/{id}', [InventoriesController::class, 'destory'])->name('inventories.destroy');
+
+
 Route::get('/reviews', [RevivewController::class, 'index'])->name('reviews');
 
 
