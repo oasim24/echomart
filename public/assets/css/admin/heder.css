@@ -1,0 +1,138 @@
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #ffffff;
+    color: #000000;
+    position: fixed;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+}
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar .brand {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: center;
+    background: #ffffff;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu .menu-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.315);
+}
+
+.menu-link {
+    color: #000000;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    display: block;
+    transition: background 0.3s;
+    font-size: 13px;
+}
+
+.menu-link:hover {
+    background: #e7e8e9;
+    color: #000000;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.menu-item.open .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 1.8rem;
+    background: #ffffff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.menu-item.open .submenu {
+    max-height: 300px; 
+}
+
+
+
+.submenu-link {
+    display: block;
+    padding: 0.6rem 0;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 13px;
+}
+
+.submenu-link:hover {
+    color: #000000;
+     background: #e7e8e9;
+}
+
+.submenu .submenu-link{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.315);
+}
+.submenu li:last-child .submenu-link {
+    border-bottom: none;
+}
+.sideback{
+    width: 100vw;
+    height: 100vh;
+    background-color: #111827;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8888;
+    display: none;
+}
+.sidebar.collapsed + .content {
+    margin-left: 20px;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+
+
+
+
+
+.menu-link.active,
+.submenu-link.active {
+     background-color: #e9f2ff;
+    color: #007bff !important;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.menu-item.active > .menu-link {
+     background-color: #e9f2ff;
+    color: #007bff !important;
+    font-weight: 600;
+}
+
+.submenu-link.active {
+    background-color: #e9f2ff;
+    color: #007bff !important;
+    font-weight: 600;
+}
+
+.submenu.show {
+     max-height: max-content;
+}
