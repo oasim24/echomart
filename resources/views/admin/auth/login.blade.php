@@ -1,162 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultra-Modern 3D Login</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Body & background */
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #1f1c2c, #928dab);
-            font-family: 'Segoe UI', sans-serif;
-        }
+    <title>Dreams POS - Inventory Management & Admin Dashboard Template</title>
 
-        /* Glassmorphism login card */
-        .login-card {
-            backdrop-filter: blur(15px);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            padding: 50px 30px;
-            width: 350px;
-            text-align: center;
-            transition: transform 0.4s, box-shadow 0.4s;
-        }
+     <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-        .login-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 50px rgba(0,0,0,0.7);
-        }
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ asset('assets/img/apple-touch-icon.png') }}">
 
-        /* Heading */
-        .login-card h2 {
-            color: #fff;
-            font-weight: bold;
-            margin-bottom: 30px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 
-        /* Inputs */
-        .form-control {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            border-radius: 12px;
-            padding: 15px;
-            color: #fff;
-            margin-bottom: 20px;
-            box-shadow: inset 0 4px 6px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
+    <!-- Fontawesome CSS -->
+     <link rel="stylesheet"
+        href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
 
-        .form-control:focus {
-            outline: none;
-            box-shadow: 0 0 15px rgba(255,255,255,0.5);
-            background: rgba(255,255,255,0.25);
-            color: #fff;
-        }
+    <!-- Tabler Icon CSS -->
+    <link rel="stylesheet" href="assets/plugins/tabler-icons/tabler-icons.min.css">
 
-        ::placeholder {
-            color: rgba(255,255,255,0.7);
-        }
 
-        /* Login button */
-        .btn-primary {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            border: none;
-            border-radius: 12px;
-            padding: 12px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.3s;
-        }
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-            background: linear-gradient(135deg, #2575fc, #6a11cb);
-        }
-
-        /* Social buttons */
-        .social-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .social-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
-
-        .facebook { background: #3b5998; }
-        .google { background: #db4437; }
-        .twitter { background: #1da1f2; }
-
-        /* Signup link */
-        .form-text {
-            color: #fff;
-            margin-top: 20px;
-        }
-
-        .form-text a {
-            color: #2575fc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .form-text a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
-<body>
 
-    <div class="login-card">
-        <h2>Login</h2>
-         <form action="{{ route('loginsubmit') }}" method="POST">
-            @csrf
-            <div class="mb-3">
-                <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
-                @error('email')
-                    <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
-                @error('password')
-                    <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
-            <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">Login</button>
-            </div>
-        </form>
+<body class="account-page bg-white">
 
-      
-
-        
+ 
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        <div class="account-content">
+            <div class="login-wrapper login-new">
+                <div class="row w-100">
+                    <div class="col-lg-5 mx-auto">
+                        <div class="login-content user-login mb-0">
+                            <div class="login-logo">
+                                <img src="assets/img/logo.svg" alt="img">
+                                <a href="index.html" class="login-logo logo-white">
+                                    <img src="assets/img/logo-white.svg" alt="Img">
+                                </a>
+                            </div>
+                            <form action="{{ route('loginsubmit') }}" method="POST">
+                                @csrf
+                                <div class="card">
+                                    <div class="card-body p-5">
+                                        <div class="login-userheading">
+                                            <h3>Sign In</h3>
+                                            <h4>Access the Dreamspos panel using your email and passcode.</h4>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email <span class="text-danger"> *</span></label>
+                                            <div class="input-group">
+                                                <input type="text" name="email" value="" class="form-control border-end-0">
+                                                <span class="input-group-text border-start-0">
+                                                    <i class="ti ti-mail"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Password <span class="text-danger">
+                                                    *</span></label>
+                                            <div class="pass-group">
+                                                <input type="password" name="password" class="pass-input form-control">
+                                                <span class="ti toggle-password ti-eye-off text-gray-9"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-login authentication-check">
+                                            <div class="row">
+                                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <label
+                                                            class="checkboxs ps-4 mb-0 pb-0 line-height-1 fs-16 text-gray-6">
+                                                            <input type="checkbox" class="form-control">
+                                                            <span class="checkmarks"></span>Remember me
+                                                        </label>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <a class="text-orange fs-16 fw-medium"
+                                                            href="forgot-password.html">Forgot Password?</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-login">
+                                            <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                                        </div>
+                                       
+                                       
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="my-2 d-flex justify-content-center align-items-center copyright-text">
+                            <p>Copyright &copy; 2025 DreamsPOS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- /Main Wrapper -->
+
+   <!-- jQuery -->
+<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}" type="text/javascript"></script>
+
+<!-- Feather Icon JS -->
+<script src="{{ asset('assets/js/feather.min.js') }}" type="text/javascript"></script>
+
+  <!-- Bootstrap Core JS -->
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+
+    <!-- Custom JS -->
+ <script src="{{ asset('assets/js/script.js') }}" type="text/javascript"></script>
+
+   <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="42ec46a6c27dbe3bf4526e22-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"3ca157e612a14eccbb30cf6db6691c29","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </body>
+
 </html>

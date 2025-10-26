@@ -1,36 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-layout-mode="light_mode">
 
 <head>
-    <meta charset="UTF-8">
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-2.1.8/r-3.0.2/datatables.min.css" />
+    <title>Echo Mart </title>
 
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote.min.css" rel="stylesheet">
+    <script src="{{ asset('assets/js/theme-script.js') }}" type="text/javascript"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="{{ asset('assets/css/admin/heder.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/admin/customdatatable.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/admin/model.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-    @stack('styles')
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ asset('assets/img/apple-touch-icon.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datetimepicker.min.css') }}">
+
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/quill/quill.snow.css') }}">
+
+    <!-- Daterangepicker CSS -->
+    <link rel="stylesheet"
+        href="{{ asset('assets/plugins/daterangepicker/daterangepicker.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/css/dataTables.bootstrap5.min.css') }}">
+
+    <!-- Tabler Icon CSS -->
+    <link rel="stylesheet"
+        href="{{ asset('assets/plugins/tabler-icons/tabler-icons.min.css') }}">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet"
+        href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
+
+    <!-- Color Picker Css -->
+    <link rel="stylesheet"
+        href="{{ asset('assets/plugins/@simonwep/pickr/themes/nano.min.css') }}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+
 </head>
 
 <body>
-    @include('admin.layouts.partials.sidebar')
+    <div class="main-wrapper">
 
-    <div class="content flex-grow-1">
+        @include('admin.layouts.partials.sidebar')
+
         @include('admin.layouts.partials.top-header')
 
-        <div class="mt-4">
-            @yield('content')
+        <div class="page-wrapper">
+            <div class="content">
+                @yield('content')
+            </div>
+            <div class="copyright-footer d-flex align-items-center justify-content-between border-top bg-white gap-3 flex-wrap">
+				<p class="fs-13 text-gray-9 mb-0">2014 - 2025 &copy; DreamsPOS. All Right Reserved</p>
+				<p>Designed & Developed By <a href="javascript:void(0);" class="link-primary">Dreams</a></p>
+			</div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
 
     <div id="model" class="model">
         <div class="model-body p-3">
@@ -40,7 +91,7 @@
             </div>
             <hr class="my-0">
             <div id=modelcontent>
-                
+
 
             </div>
 
@@ -52,22 +103,44 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <!-- jQuery -->
+<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}" type="text/javascript"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Feather Icon JS -->
+<script src="{{ asset('assets/js/feather.min.js') }}" type="text/javascript"></script>
 
+<!-- Slimscroll JS -->
+<script src="{{ asset('assets/js/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/js/dataTables.bootstrap5.min.js') }}" type="text/javascript"></script>
 
-    <script src="https://cdn.datatables.net/v/bs5/dt-2.1.8/r-3.0.2/datatables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.min.js"></script>
+<!-- Bootstrap Core JS -->
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
 
+<!-- ApexChart JS -->
+<script src="{{ asset('assets/plugins/apexchart/apexcharts.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/plugins/apexchart/chart-data.js') }}" type="text/javascript"></script>
 
+<!-- Chart JS -->
+<script src="{{ asset('assets/plugins/chartjs/chart.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/plugins/chartjs/chart-data.js') }}" type="-text/javascript"></script>
 
+<!-- Daterangepicker JS -->
+<script src="{{ asset('assets/js/moment.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/plugins/daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
 
+<!-- Select2 JS -->
+<script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/plugins/quill/quill.min.js') }}" type="text/javascript"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote.min.js"></script>
+<!-- Color Picker JS -->
+<script src="{{ asset('assets/plugins/@simonwep/pickr/pickr.es5.min.js') }}" type="text/javascript"></script>
 
+<!-- Custom JS -->
+<script src="{{ asset('assets/js/theme-colorpicker.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/js/script.js') }}" type="text/javascript"></script>
 
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="42ec46a6c27dbe3bf4526e22-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"3ca157e612a14eccbb30cf6db6691c29","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
 
 
@@ -123,49 +196,26 @@
 
 
 
-            $('#short_description').summernote({
-                placeholder: 'Enter short description',
-                height: 100,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough', 'superscript', 'subscript']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['insert', ['link', 'picture', 'video']],
-                    ['view', ['fullscreen', 'codeview', 'help']]
-                ]
-            });
+           
 
-            $('#long_description').summernote({
-                placeholder: 'Enter long description',
-                height: 100,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough', 'superscript', 'subscript']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['insert', ['link', 'picture', 'video']],
-                    ['view', ['fullscreen', 'codeview', 'help']]
-                ]
-            });
+            // Laravel route stored in a JS variable
+            let createProductUrl = "{{ route('products.create') }}";
 
-
-// Laravel route stored in a JS variable
-    let createProductUrl = "{{ route('products.create') }}";
-
-    function addProduct() {
-        $.ajax({
-            url: createProductUrl,   // Use the hardcoded route
-            type: 'GET',
-            dataType: 'json',        // Expect JSON response
-            success: function(response) {
-                $('#modelcontent').html(response.html);
-                $('#model').css('transform', 'scale(1)'); // Show modal
-            },
-            error: function(xhr, status, error) {
-                console.error(error);
-                alert('Something went wrong while loading the form.');
+            function addProduct() {
+                $.ajax({
+                    url: createProductUrl, // Use the hardcoded route
+                    type: 'GET',
+                    dataType: 'json', // Expect JSON response
+                    success: function (response) {
+                        $('#modelcontent').html(response.html);
+                        $('#model').css('transform', 'scale(1)'); // Show modal
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                        alert('Something went wrong while loading the form.');
+                    }
+                });
             }
-        });
-    }
 
 
 
